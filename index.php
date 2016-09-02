@@ -40,7 +40,18 @@ if (!$result) {
             echo '<h3><a href="category.php?id='.$row['catId'].'">' . $row['catName'] . '</a></h3>' . $row['catDescription'];
             echo '</td>';
             echo '<td class="rightpart">';
-            echo '<a href="topic.php?id=">Topic subject</a> at 10-10';
+            //find the latest topic in the category
+            $sqlFindLatestTopic= "select topicId,topicSubject from topics where topicCat ="
+                .$row['catId']." order by topicId desc";
+            $resultsqlFindLatestTopic=$db->query($sqlFindLatestTopic);
+            if(($resultsqlFindLatestTopic->num_rows)==0){
+                echo "There is no topics in the category!";
+            }else{
+                $rowsqlFindLatestTopic=($resultsqlFindLatestTopic->fetch_assoc());
+                echo '<a href="topic.php?id='.$rowsqlFindLatestTopic['topicId'].'">'
+                    .$rowsqlFindLatestTopic['topicSubject'].'</a>';
+            }
+
             echo '</td>';
             echo '</tr>';
         }

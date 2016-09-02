@@ -10,7 +10,7 @@ include 'header.php';
 
 //set the id for query
 $catIdFromGet = trim($_GET['id']);
-$catIdFromGet=intval($catIdFromGet);
+$catIdFromGet = intval($catIdFromGet);
 if (!get_magic_quotes_gpc()) {
     $catIdFromGet = addslashes($catIdFromGet);
 }
@@ -65,7 +65,7 @@ if (!$resultSelectCategoryForDisplay) {
 
                 while ($rowSelectTopicForDisplay = ($resultSelectTopicForDisplay->fetch_assoc())) {
                     echo '<tr>';
-                    echo '<td class="leftpart">';
+                    echo '<td class="leftpart" style="width: auto;">';
                     echo '<h3><a href="topic.php?id=' . $rowSelectTopicForDisplay['topicId'] . '">'
                         . $rowSelectTopicForDisplay['topicSubject'] . '</a><h3>';
                     echo '</td>';
@@ -73,8 +73,8 @@ if (!$resultSelectCategoryForDisplay) {
                     echo date('d-m-Y', strtotime($rowSelectTopicForDisplay['topicDate']));
                     echo '</td>';
                     echo '</tr>';
-                    echo '</table>';
                 }
+                echo '</table>';
             }
         }
     }

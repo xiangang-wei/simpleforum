@@ -118,7 +118,7 @@ if ($_SESSION['signedIn'] == false) {
                 echo 'An error occured while inserting your post. Please try again later.';
             } else {
                 //after a lot of work, the query succeeded!
-                echo 'You have successfully created <a href="topic.php?id=' . $topicid . '">your new topic</a>.';
+                echo 'You have successfully created <a href="topic.php?id=' . $topicId . '">your new topic</a>.';
             }
         }
     }

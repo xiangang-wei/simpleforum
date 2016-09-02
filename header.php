@@ -21,13 +21,15 @@ session_start();
 <h1>My forum</h1>
 <div id="wrapper">
     <div id="menu">
-        <a class="item" href="index.php">Home</a> -
+        <a class="item" href="index.php">Home</a>
         <?php
-        if ($_SESSION['userLevel']==0){
-            echo '<a class="item" href="createCat.php">Create a category</a> -';
+        if ($_SESSION['signedIn']) {
+            echo ' - <a class="item" href="createTopic.php">Create a topic</a>';
+            if ($_SESSION['userLevel'] == 0) {
+                echo ' - <a class="item" href="createCat.php">Create a category</a> ';
+            }
         }
         ?>
-        <a class="item" href="createTopic.php">Create a topic</a>
 
 
         <div id="userbar">
