@@ -51,5 +51,5 @@ if(!$_SESSION['signedIn']){
         }
     }
 }
-include 'footer . php';
+include 'footer.php';
 ?>

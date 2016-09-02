@@ -37,7 +37,7 @@ if (!$result) {
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td class="leftpart">';
-            echo '<h3><a href="category.php?id">' . $row['catName'] . '</a></h3>' . $row['catDescription'];
+            echo '<h3><a href="category.php?id='.$row['catId'].'">' . $row['catName'] . '</a></h3>' . $row['catDescription'];
             echo '</td>';
             echo '<td class="rightpart">';
             echo '<a href="topic.php?id=">Topic subject</a> at 10-10';
