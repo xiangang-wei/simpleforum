@@ -22,8 +22,13 @@ session_start();
 <div id="wrapper">
     <div id="menu">
         <a class="item" href="index.php">Home</a> -
-        <a class="item" href="createTopic.php">Create a topic</a> -
-        <a class="item" href="createCat.php">Create a category</a>
+        <?php
+        if ($_SESSION['userLevel']==0){
+            echo '<a class="item" href="createCat.php">Create a category</a> -';
+        }
+        ?>
+        <a class="item" href="createTopic.php">Create a topic</a>
+
 
         <div id="userbar">
             <?php

@@ -97,9 +97,9 @@ if ($_SESSION['signedIn'] == true) {
             //also notice the sha1 function which hashes the password
             $sqlInsert = "insert into users (userName,userPass,userEmail,userDate,userLevel) values 
                       ('" . $userName . "', '" . sha1($userPass) . "', '" . $userEmail . "', '"
-                . date("Y-m-d H:i:s") . "', 0) ";
+                . date("Y-m-d H:i:s") . "', 1) ";
             $result = $db->query($sqlInsert);
-            if ($result) {
+            if (!$result) {
                 //something went wrong, display the error
                 echo 'Something went wrong while registering. Please try again later.';
                 //echo mysql_error(); //debugging purposes, uncomment when needed
