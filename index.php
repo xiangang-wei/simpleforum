@@ -11,6 +11,7 @@
 include 'connect.php';
 include 'header.php';
 
+echo '<h2>Forum</h2>';
 $sql = "select
             catId,
             catName,
@@ -20,18 +21,12 @@ $sql = "select
 
 $result = $db->query($sql);
 
-if(!$result)
-{
+if (!$result) {
     echo 'The categories could not be displayed, please try again later.';
-}
-else
-{
-    if($result->num_rows == 0)
-    {
+} else {
+    if ($result->num_rows == 0) {
         echo 'No categories defined yet.';
-    }
-    else
-    {
+    } else {
         //prepare the table
         echo '<table border="1">
               <tr>
@@ -39,8 +34,7 @@ else
                 <th>Last topic</th>
               </tr>';
 
-        while($row = $result->fetch_assoc())
-        {
+        while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td class="leftpart">';
             echo '<h3><a href="category.php?id">' . $row['catName'] . '</a></h3>' . $row['catDescription'];

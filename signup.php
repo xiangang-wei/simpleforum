@@ -9,7 +9,7 @@
 include 'connect.php';
 include 'header.php';
 
-echo '<h3>Sign up</h3>';
+echo '<h2>Sign up</h2>';
 if ($_SESSION['signedIn'] == true) {
     echo 'You are already signed in, you can <a href="signout.php">sign out</a> if you want.';
 }else {
