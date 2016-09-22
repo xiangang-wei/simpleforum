@@ -1,36 +1,36 @@
 CREATE TABLE users (
-user_id     INT(8) NOT NULL AUTO_INCREMENT,
-user_name   VARCHAR(30) NOT NULL,
-user_pass   VARCHAR(255) NOT NULL,
-user_email  VARCHAR(255) NOT NULL,
-user_date   DATETIME NOT NULL,
-user_level  INT(8) NOT NULL,
-UNIQUE INDEX user_name_unique (user_name),
-PRIMARY KEY (user_id)
+userId     INT(8) NOT NULL AUTO_INCREMENT,
+userName   VARCHAR(30) NOT NULL,
+userPass   VARCHAR(255) NOT NULL,
+userEmail  VARCHAR(255) NOT NULL,
+userDate   DATETIME NOT NULL,
+userLevel  INT(8) NOT NULL,
+UNIQUE INDEX userName_unique (userName),
+PRIMARY KEY (userId)
 )engine=innodb default charset = utf8;
 
 CREATE TABLE categories (
-cat_id          INT(8) NOT NULL AUTO_INCREMENT,
-cat_name        VARCHAR(255) NOT NULL,
-cat_description     VARCHAR(255) NOT NULL,
-UNIQUE INDEX cat_name_unique (cat_name),
-PRIMARY KEY (cat_id)
+catId          INT(8) NOT NULL AUTO_INCREMENT,
+catName        VARCHAR(255) NOT NULL,
+catDescription     VARCHAR(255) NOT NULL,
+UNIQUE INDEX catName_unique (catName),
+PRIMARY KEY (catId)
 )engine=innodb default charset = utf8;
 
 CREATE TABLE topics (
-topic_id        INT(8) NOT NULL AUTO_INCREMENT,
-topic_subject       VARCHAR(255) NOT NULL,
-topic_date      DATETIME NOT NULL,
-topic_cat       INT(8) NOT NULL,
-topic_by        INT(8) NOT NULL,
-PRIMARY KEY (topic_id)
+topicId        INT(8) NOT NULL AUTO_INCREMENT,
+topicSubject       VARCHAR(255) NOT NULL,
+topicDate      DATETIME NOT NULL,
+topicCat       INT(8) NOT NULL,
+topicBy        INT(8) NOT NULL,
+PRIMARY KEY (topicId)
 )engine=innodb default charset = utf8;
 
 CREATE TABLE posts (
-post_id         INT(8) NOT NULL AUTO_INCREMENT,
-post_content        TEXT NOT NULL,
-post_date       DATETIME NOT NULL,
-post_topic      INT(8) NOT NULL,
-post_by     INT(8) NOT NULL,
-PRIMARY KEY (post_id)
+postId         INT(8) NOT NULL AUTO_INCREMENT,
+postContent        TEXT NOT NULL,
+postDate       DATETIME NOT NULL,
+postTopic      INT(8) NOT NULL,
+postBy     INT(8) NOT NULL,
+PRIMARY KEY (postId)
 )engine=innodb default charset = utf8;

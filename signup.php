@@ -12,7 +12,7 @@ include 'header.php';
 echo '<h2>Sign up</h2>';
 if ($_SESSION['signedIn'] == true) {
     echo 'You are already signed in, you can <a href="signout.php">sign out</a> if you want.';
-}else {
+} else {
     if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
         /*the form hasn't been posted yet, display it
