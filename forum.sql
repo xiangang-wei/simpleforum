@@ -7,7 +7,7 @@ user_date   DATETIME NOT NULL,
 user_level  INT(8) NOT NULL,
 UNIQUE INDEX user_name_unique (user_name),
 PRIMARY KEY (user_id)
-);
+)engine=innodb default charset = utf8;
 
 CREATE TABLE categories (
 cat_id          INT(8) NOT NULL AUTO_INCREMENT,
@@ -15,7 +15,7 @@ cat_name        VARCHAR(255) NOT NULL,
 cat_description     VARCHAR(255) NOT NULL,
 UNIQUE INDEX cat_name_unique (cat_name),
 PRIMARY KEY (cat_id)
-);
+)engine=innodb default charset = utf8;
 
 CREATE TABLE topics (
 topic_id        INT(8) NOT NULL AUTO_INCREMENT,
@@ -24,7 +24,7 @@ topic_date      DATETIME NOT NULL,
 topic_cat       INT(8) NOT NULL,
 topic_by        INT(8) NOT NULL,
 PRIMARY KEY (topic_id)
-);
+)engine=innodb default charset = utf8;
 
 CREATE TABLE posts (
 post_id         INT(8) NOT NULL AUTO_INCREMENT,
@@ -33,4 +33,4 @@ post_date       DATETIME NOT NULL,
 post_topic      INT(8) NOT NULL,
 post_by     INT(8) NOT NULL,
 PRIMARY KEY (post_id)
-);
+)engine=innodb default charset = utf8;
